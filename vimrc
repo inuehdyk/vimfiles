@@ -116,6 +116,22 @@ endtry
 
 " vim:set et ts=2 sw=0:
 
+"-------------------------------------------------------------------------------
+" vim-plug Setting
+"
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+" plugins
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'bronson/vim-trailing-whitespace'
+
+" Initialize plugin system
+call plug#end()
+
+"-------------------------------------------------------------------------------
+"other settings
 filetype plugin indent on
 
 set undofile
@@ -131,4 +147,5 @@ set ruler
 set shiftwidth=2
 set tabstop=2
 set autoindent
+
 
