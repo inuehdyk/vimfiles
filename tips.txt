@@ -1,0 +1,24 @@
+CentOSのvim8をさがす
+https://copr.fedorainfracloud.org/
+でvimを検索してそれらしいのを物色する。今回
+https://copr.fedorainfracloud.org/coprs/lantw44/vim-latest/
+を入れてみたのでその手順
+
+rootでやらないとsudoがなくなってしぬことがよくあるのでsu rootした方が安全。
+
+su root
+cd /etc/yum.repos.d/
+curl -O https://copr.fedorainfracloud.org/coprs/lantw44/vim-latest/repo/epel-7/lantw44-vim-latest-epel-7.repo 
+yum update vim
+
+基本的にはこれでいけるハズだけどなんかエラーが出てアップデートできなかったら今のを全部けしてインストールすればいいとおもう。
+
+yum remove vim*
+yum install vim
+
+あたらしいgitをいれる。
+curl https://setup.ius.io/ | bash
+yum remove git
+yum install git2u
+でいけるみたい。
+
