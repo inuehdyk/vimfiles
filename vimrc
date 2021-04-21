@@ -105,7 +105,8 @@ endif
 
 "-------------------------------------------------------------------------------
 " カラースキームの設定
-colorscheme torte
+set background=dark
+colorscheme murphy
 
 try
   silent hi CursorIM
@@ -133,6 +134,7 @@ Plug 'mattn/emmet-vim'
 " Initialize plugin system
 call plug#end()
 
+
 "-------------------------------------------------------------------------------
 "other settings
 filetype plugin indent on
@@ -150,5 +152,4 @@ set ruler
 set shiftwidth=2
 set tabstop=2
 set autoindent
-
 
