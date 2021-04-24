@@ -106,6 +106,7 @@ endif
 "-------------------------------------------------------------------------------
 " カラースキームの設定
 " https://github.com/tomasiser/vim-code-dark.git
+set background=dark
 colorscheme codedark
 
 try
@@ -163,7 +164,7 @@ let g:airline#extensions#default#layout = [
 let g:airline_section_c = '%t %M'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 " 変更がなければdiffの行数を表示しない
-let g:airline#extensions#hunks#non_zero_only = 1 
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " タブラインの表示を変更する
 let g:airline#extensions#tabline#fnamemod = ':t'
