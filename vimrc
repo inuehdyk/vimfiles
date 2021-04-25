@@ -106,7 +106,6 @@ endif
 "-------------------------------------------------------------------------------
 " カラースキームの設定
 " https://github.com/tomasiser/vim-code-dark.git
-set background=dark
 colorscheme codedark
 
 try
@@ -128,21 +127,23 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomtom/tcomment_vim'
 Plug 'bronson/vim-trailing-whitespace'
 
+" LSP
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
-
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
+" FERN
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 
+" CTRLP
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'vim-airline/vim-airline'
@@ -164,7 +165,7 @@ let g:airline#extensions#default#layout = [
 let g:airline_section_c = '%t %M'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 " 変更がなければdiffの行数を表示しない
-let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#hunks#non_zero_only = 1 
 
 " タブラインの表示を変更する
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -200,3 +201,9 @@ set guifont=Cica:h11
 set printfont=Cica:h8
 " set renderingoptions=type:directx,renmode:5
 set ambiwidth=double
+
+"
+" 各種設定の読み込み
+"
+" 各種設定の読み込み
+call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
