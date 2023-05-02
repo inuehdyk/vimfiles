@@ -9,6 +9,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+syntax enable
 set background=dark
 try
   colorscheme solarized
@@ -37,6 +38,7 @@ if has('win32')
   let $PATH='c:\dev\vim;c:\msys64\mingw64\bin;c:\msys64\usr\bin;'
   \ .'c:\Program Files\Java\jdk1.8.0_221\bin;'.$PATH
 endif
+
 
 packadd vim-jetpack
 call jetpack#begin()
