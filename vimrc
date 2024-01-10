@@ -44,6 +44,11 @@ packadd vim-jetpack
 call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
 Jetpack 'mattn/emmet-vim'
+Jetpack 'ctrlpvim/ctrlp.vim'
+Jetpack 'prabirshrestha/vim-lsp'
+Jetpack 'mattn/vim-lsp-settings'
+Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
+Jetpack 'tpope/vim-fugitive'
 call jetpack#end()
 
 
