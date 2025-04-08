@@ -9,6 +9,16 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+set backup
+set writebackup
+set swapfile
+set undofile
+
+set backupdir=$HOME/vimfiles/tmp/backup//
+set directory=$HOME/vimfiles/tmp/swap//
+set undodir=$HOME/vimfiles/tmp/undo//
+
+
 syntax enable
 set background=dark
 try
@@ -45,12 +55,28 @@ call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
 Jetpack 'mattn/emmet-vim'
 Jetpack 'ctrlpvim/ctrlp.vim'
+
+Jetpack 'tpope/vim-fugitive'
+Jetpack 'tpope/vim-surround'
+Jetpack 'tpope/vim-rhubarb'
+
+Jetpack 'prabirshrestha/asyncomplete.vim'
+Jetpack 'prabirshrestha/asyncomplete-lsp.vim'
 Jetpack 'prabirshrestha/vim-lsp'
 Jetpack 'mattn/vim-lsp-settings'
-Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
-Jetpack 'tpope/vim-fugitive'
-call jetpack#end()
+Jetpack 'mattn/vim-lsp-icons'
 
+Jetpack 'hrsh7th/vim-vsnip'
+Jetpack 'hrsh7th/vim-vsnip-integ'
+
+Jetpack 'vim-skk/eskk.vim'
+
+Jetpack 'mattn/vim-findroot'
+Jetpack 'lambdalisue/fern.vim'
+
+Jetpack 'glidenote/memolist.vim'
+
+call jetpack#end()
 
 " 各種設定の読み込み
 call map(sort(split(globpath(&runtimepath, '_config/*.vim'))), {->[execute('exec "so" v:val')]})
